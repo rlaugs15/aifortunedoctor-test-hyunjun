@@ -5,10 +5,23 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: "GapyeongHanseokbong";
+  src: url("/fonts/GapyeongHanseokbongL.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
+  --color-global: #f3f2ef;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+
+  /* 기본 sans 폰트를 한석봉체로 교체 */
+  --font-sans: "GapyeongHanseokbong", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans",
+    "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
+
   --font-mono: var(--font-geist-mono);
 }
 
@@ -19,8 +32,14 @@
   }
 }
 
+@layer utilities {
+  .text-hanseok {
+    @apply font-sans text-[16px] leading-[150%] tracking-[-0.025em] text-center;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
