@@ -1,10 +1,11 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { hanseok } from "@/libs/fonts";
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="antialiased">
+      <body className={hanseok.className}>
         <Main />
         <NextScript />
       </body>
