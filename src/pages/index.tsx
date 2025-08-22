@@ -1,5 +1,5 @@
-import Scene1 from "@/components/Scene1";
-import Scene2 from "@/components/Scene2";
+import Scene1 from "@/components/scenes/Scene1";
+import Scene2 from "@/components/scenes/Scene2";
 
 export default function Home() {
   return (

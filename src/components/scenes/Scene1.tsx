@@ -1,9 +1,12 @@
+import { fateSample } from "@/mocks/fateSample";
 import Image from "next/image";
-import ChapterTitle from "./ChapterTitle";
-import GradientOverlay from "./GradientOverlay";
-import SpeechBubbleUp from "./SpeechBubbleUp";
+import ChapterTitle from "../ChapterTitle";
+import GradientOverlay from "../GradientOverlay";
+import SpeechBubbleUp from "../SpeechBubbleUp";
 
 export default function Scene1() {
+  /** 패칭, 캐시된 데이터 */
+  const fateData = fateSample;
   return (
     <section className="relative aspect-[375/752]">
       <div className="relative bg-[url('/images/scene1.jpg')] aspect-[375/652]">
@@ -14,12 +17,13 @@ export default function Scene1() {
             src="/images/cheongwol.svg"
             alt="청월아씨"
             fill
+            priority
             className="drop-shadow-[18px_16px_12px_rgba(0,0,0,0.25)]"
           />
         </div>
         <GradientOverlay position="bottom" height="h-1/5" color="global" />
       </div>
-      <SpeechBubbleUp usreName="김현준" />
+      <SpeechBubbleUp usreName={fateData.username} />
     </section>
   );
 }
