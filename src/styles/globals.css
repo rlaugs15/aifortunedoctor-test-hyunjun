@@ -13,14 +13,28 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "zenAntique";
+  src: url("/fonts/ZenAntique-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-global: #f3f2ef;
+  --color-fate: #f5f3ec;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* 기본 sans 폰트를 한석봉체로 교체 */
+  --color-border: #2b557e;
+
+  /* 기본 sans는 한석봉체 */
   --font-sans: "GapyeongHanseokbong", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans",
     "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
+
+  /* zen 전용 스택 (라틴 위주라 한글은 폴백됨) */
+  --font-zen: "zenAntique", Georgia, Cambria, "Times New Roman", Times, serif;
 
   --font-mono: var(--font-geist-mono);
 }
@@ -36,10 +50,30 @@
   .text-hanseok {
     @apply font-sans text-[16px] leading-[150%] tracking-[-0.025em] text-center;
   }
+  .font-zen {
+    font-family: var(--font-zen);
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+.fate-table {
+  @apply w-full text-center border-r-[2px] flex-1 h-full;
+}
+
+.fate-table tr > * {
+  @apply border-r-[0.49px] border-r-[#8A8A8A];
+}
+
+.fate-table th,
+.fate-table td {
+  @apply border-b-[2px];
+}
+
+.fate-table tbody tr:nth-child(2) > * {
+  @apply border-b-[0.49px] border-r-[#8A8A8A];
 }

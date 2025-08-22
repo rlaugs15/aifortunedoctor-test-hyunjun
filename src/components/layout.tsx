@@ -3,9 +3,5 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  return (
-    <>
-      <div className="w-screen">{children}</div>
-    </>
-  );
+  return <div className="w-screen">{children}</div>;
 }
