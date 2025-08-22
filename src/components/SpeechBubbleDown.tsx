@@ -8,7 +8,7 @@ interface SpeechBubbleDownProps {
 
 export default function SpeechBubbleDown({ usreName, className = "" }: SpeechBubbleDownProps) {
   return (
-    <div className={cn("absolute -top-[26%] left-[8.5%] w-[272px] aspect-[272/160]", className)}>
+    <div className={cn("absolute -top-[26%] left-[8.5%] w-[60.7%] aspect-[272/160]", className)}>
       <div className="relative aspect-[272/160]">
         <Image
           src="/images/speech-bubble-down.svg"
